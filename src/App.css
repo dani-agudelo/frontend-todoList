@@ -70,6 +70,10 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.Todo > p {
+  font-size: 13px; /* Ajusta el tamaño de la fuente según tus necesidades */
+}
+
 .fa-trash {
   margin-left: 0.75rem;
 }
@@ -89,4 +93,3 @@ h1 {
 .delete-icon {
   cursor: pointer;
 }
- 

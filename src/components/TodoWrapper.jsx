@@ -7,8 +7,9 @@ uuidv4()
 
 
 export const TodoWrapper = () => {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([]) // va a ser una lista
 
+  //* Agrega una tarea a la lista
   const addTodo = todo => {
     setTodos([...todos, { id: uuidv4(), task: todo, completed: false, isEditing: false }])
   }
@@ -17,6 +18,7 @@ export const TodoWrapper = () => {
     console.log(todos)
   }, [todos])
 
+  //* Marca una tarea como completada o no completada
   const toggleComplete = id => {
     setTodos(todos.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ))
@@ -26,10 +28,12 @@ export const TodoWrapper = () => {
     setTodos(todos.filter(todo => todo.id !== id))
   }
 
+  //* Activa el modo de edición para una tarea
   const editTodo = id => {
     setTodos(todos.map(todo => todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo))
   }
 
+  //* Actualiza la tarea con el nuevo valor editado
   const editTask = (task, id) => {
     setTodos(todos.map(todo => todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo))
   }
